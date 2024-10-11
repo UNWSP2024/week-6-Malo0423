@@ -1,11 +1,17 @@
-# Program #3: Tax Rate
-# A retail company must file a monthly sales tax report listing the total sales for the month, 
-# and the amount of state and county sales tax collected. 
-# The state sales tax rate is 5 percent and the county sales tax rate is 2.5 percent.  
-# Write a program that asks the user to enter the total sales for the month.  
-# From this figure, the application should calculate and display the following:
+STATE_TAX = 0.05
+COUNTY_TAX = 0.025
 
-# The amount of county sales tax.
-# The amount of state sales tax.
-# The total sales tax (county plus state)
-# Use at least one function with input and output in this program
+
+
+def main():
+    total_sales = float(input('Enter total sales for the month: '))
+    total_state = total_sales * STATE_TAX
+    total_county = total_sales * COUNTY_TAX
+    total_tax = total_state + total_county
+
+    print(f'The state tax is ${total_state}')
+    print(f'The county tax is ${total_county}')
+    print(f'The total sales tax is ${total_tax}')
+
+if __name__ == '__main__':
+    main()
